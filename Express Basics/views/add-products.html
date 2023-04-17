@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example | Home</title>
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="/form.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header--nav">
+        <ul class="header--ul">
+          <li class="header--li"><a href="/">Home</a></li>
+          <li class="header--li"><a href="/products">Products</a></li>
+          <li class="header--li"><a href="/add-products">Add Products</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form class="form" action="/add-products" method="POST">
+        <label class="form--label" for="title"> Product Title</label>
+        <input class="form--input" type="text" name="title" />
+        <button class="form--button form--button__blue" type="submit">
+          Submit
+        </button>
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<%- include("./includes/head") %>
+</head>
+
+<body>
+  <header class="header">
+    <%- include("./includes/nav") %>
+    </nav>
+  </header>
+  <main>
+    <% if(productList.length == 0){ %>
+    <h2>Nothing to display, try adding some products</h2>
+    <%} else { %>
+    <h2>Product List</h2>
+    <ul>
+      <% productList.forEach(item => { %>
+      <li><%= item.title %></li>
+      <% }); %>
+    </ul>
+    <% } %>
+  </main>
+  <%- include("./includes/tail") %>

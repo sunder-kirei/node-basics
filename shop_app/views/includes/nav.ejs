@@ -1,0 +1,30 @@
+<nav class="header--nav">
+  <ul class="header--ul">
+    <li class="header--li">
+      <a class="<%= path === '/' ? 'active' : '' %>" href="/"> Home </a>
+    </li>
+    <% if(locals.isAuth){ %>
+    <li class="header--li">
+      <a class="<%= path === '/add-products' ? 'active' : '' %>" href="/add-products">Add Products</a>
+    </li>
+    <li class="header--li">
+      <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart">
+        Cart</a>
+    </li>
+    <li class="header--li float-right">
+      <a class="<%= path === '/logout' ? 'active' : '' %>" href="/logout">
+        Logout</a>
+    </li>
+    <% } %>
+    <% if(!locals.isAuth){ %>
+    <li class="header--li float-right">
+      <a class="<%= path === '/login' ? 'active' : '' %>" href="/login">
+        Login</a>
+    </li>
+    <li class="header--li ">
+      <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">
+        SignUp</a>
+    </li>
+    <% } %>
+  </ul>
+</nav>

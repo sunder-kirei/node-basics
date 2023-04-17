@@ -1,0 +1,12 @@
+extends layout/layout.pug
+
+block body 
+    main 
+        if(productList.length == 0)
+            h2 Nothing to display, try adding some products
+        else
+            h2 Product List 
+            ul
+                each product in productList 
+                    li #{product.title}
+        

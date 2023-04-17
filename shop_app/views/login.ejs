@@ -1,0 +1,26 @@
+<%- include("./includes/head") %>
+<link rel="stylesheet" href="/form.css">
+</head>
+
+<body>
+  <header class="header">
+    <%- include("./includes/nav") %>
+    </nav>
+  </header>
+  <main>
+    <form action="/login" class="form" method="POST">
+      <% if(message){ %>
+      <div class="msg msg__error"><%= message %></div>
+      <% } %>
+      <label for="email" class="form--label">Email</label>
+      <input type="email" class="form--input" id="email" name="email">
+      <label for="password" class="form--label">Password</label>
+      <input type="password" class="form--input" id="password" name="password">
+      <input type="hidden" value=<%=_csrf%> name="_csrf">
+      <button class="form--button form--button__blue" type="submit">
+        Submit
+      </button>
+      <a href="/reset-password" class="anchor__primary">Forgot Password?</a>
+    </form>
+  </main>
+  <%- include("./includes/tail") %>

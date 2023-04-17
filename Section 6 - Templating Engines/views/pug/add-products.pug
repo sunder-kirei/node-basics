@@ -1,0 +1,11 @@
+extends layout/layout.pug
+
+block styles 
+    link(rel="stylesheet", href="/form.css")
+
+block body 
+    main 
+        form.form(action="/add-products" method="POST") 
+            label.form--label(for="title") Product Title 
+            input.form--input(type="text" name="title")
+            button.form--button.form--button__blue(type = "submit") Submit

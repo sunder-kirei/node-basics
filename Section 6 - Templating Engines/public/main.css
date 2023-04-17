@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: monospace;
+}
+
+.header {
+  width: 100%;
+  height: 10%;
+  font-size: 2rem;
+}
+
+.header--nav {
+  padding: 0.5rem 1rem;
+}
+
+.header--ul {
+  display: flex;
+}
+
+.header--ul li {
+  list-style: none;
+  margin-right: 1rem;
+}
+
+.header--li a,
+.header--li a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.header--li a:hover,
+.header--li a:active {
+  color: blue;
+}
+
+.header--li a.active {
+  color: blue;
+}

@@ -1,0 +1,37 @@
+<%- include("./includes/head") %>
+<link rel="stylesheet" href="/home-page.css">
+<link rel="stylesheet" href="/form.css">
+</head>
+
+<body>
+  <header class="header">
+    <%- include("./includes/nav") %>
+    </nav>
+  </header>
+  <main>
+    <% if(productList.length == 0){ %>
+    <h2 class="product-list--heading">Nothing to display, try adding some products</h2>
+    <%} else { %>
+    <h2 class="product-list--heading">Product List</h2>
+    <ul class="product-list--ul">
+      <% productList.forEach(item => { %>
+      <li class="product-list--li">
+        <div class="product-list--li__image">
+          <img src="<%= item.imageUrl %>" alt="product image">
+        </div>
+        <div class="product-list--li__title">
+          <%= item.title %>
+        </div>
+        <div class="product-list--li__description">
+          <%= item.description %>
+        </div>
+        <div class="product-list--li__actions">
+          <a class="form--button form--button__blue product-list--li__button" href="/add-products/?id=<%= item._id %>">Edit Product</a>
+          <a class="form--button form--button__blue product-list--li__button" href="cart/add?id=<%=item._id%>">Add to Cart</a>
+        </div>
+      </li>
+      <% }); %>
+    </ul>
+    <% } %>
+  </main>
+  <%- include("./includes/tail") %>
